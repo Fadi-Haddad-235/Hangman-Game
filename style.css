@@ -38,12 +38,27 @@ h3{
 }
 .container{
     display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+.container .left{
+    display: flex;
     flex-direction: column;
     justify-items: center;
     align-items: center;
 }
 #word{
-    font-size: 40px;
+    font-size: 60px;
     letter-spacing: 3px;
     font-weight: 500;
+    padding-bottom: 30px;
+}
+#your-status{
+    font-size: 60px;
+    color: red;
+}
+#lives, #hint{
+    font-size: 30px;
+    font-weight:bold;
+    padding-bottom: 30px;
 }

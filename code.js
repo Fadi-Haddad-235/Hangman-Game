@@ -18,6 +18,13 @@ window.onload=function(){
     let under_scores_array = Array.from(under_scores)
     const dashed_word = document.getElementById("word");
     dashed_word.innerHTML = under_scores
+    document.getElementById("img").src="images/hangman-0.png"
+    your_status=document.getElementById("your-status");
+    remainig_lives=document.getElementById("lives")
+
+
+
+
     // console.log(dashed_word.innerHTML)
     let wrong_attempts = 0;
 
@@ -25,26 +32,38 @@ window.onload=function(){
     let status= false
 document.addEventListener("click",(e) => {
     status= false
-    if (e.target.className==="letter"){
-        e.target.classList.add("clicked")
-    }
-    let clickedLetter = e.target.innerHTML.toLowerCase()
-    random_word_letters.forEach((word_letter, index)=>{
-        if(clickedLetter == word_letter){
-            // console.log(clickedLetter,random_word)
-            status= true;
-            under_scores_array[index]=clickedLetter;
-            dashed_word.innerHTML = under_scores_array.join('');
-
+    if(wrong_attempts<8){
+        if (e.target.className==="letter"){
+            e.target.classList.add("clicked")
         }
-    })
+        let clickedLetter = e.target.innerHTML.toLowerCase()
+        random_word_letters.forEach((word_letter, index)=>{
+            if(clickedLetter == word_letter){
+                // console.log(clickedLetter,random_word)
+                status= true;
+                under_scores_array[index]=clickedLetter;
+                dashed_word.innerHTML = under_scores_array.join('');
+    
+            }
+        })
+    }
+
     if(!status  && e.target.classList.contains("clicked")){
         wrong_attempts++;
-        console.log(wrong_attempts)
-        if (under_scores_array.indexOf("_") == -1){
-            console.log("you win!!")
-
+        if(wrong_attempts<8){
+            img_src=`images/hangman-${wrong_attempts}.png`
+            document.getElementById("img").src=img_src
+        }
+        console.log(wrong_attempts, under_scores_array)
+        if (wrong_attempts==7){
+            your_status.innerHTML="you lose!!"
         }
     }
+    if (under_scores_array.indexOf("_") == -1){
+        console.log("you win!!");
+        your_status.innerHTML="you win!!"
+
+    }
+    remainig_lives.innerHTML=`You have ${7-wrong_attempts} lives left`;
 })
 }

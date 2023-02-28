@@ -11,43 +11,50 @@
 <body>
     <div><h1>HANGMAN</h1></div>
     <div class="container">
-        <h2>press on the letters below to guess the word</h2>
-        <div class="ul">
-            <ul class="letters">
-                <li class="letter" id="A">A</li>
-                <li class="letter" id="B">B</li>
-                <li class="letter" id="C">C</li>
-                <li class="letter" id="C">D</li>
-                <li class="letter" id="E">E</li>
-                <li class="letter" id="F">F</li>
-                <li class="letter" id="G">G</li>
-                <li class="letter" id="H">H</li>
-                <li class="letter" id="I">I</li>
-                <li class="letter" id="J">J</li>
-                <li class="letter" id="K">K</li>
-                <li class="letter" id="L">L</li>
-                <li class="letter" id="M">M</li>
-            </ul>
-            <ul class="letters">
-                <li class="letter" id="N">N</li>
-                <li class="letter" id="O">O</li>
-                <li class="letter" id="P">P</li>
-                <li class="letter" id="Q">Q</li>
-                <li class="letter" id="R">R</li>
-                <li class="letter" id="S">S</li>
-                <li class="letter" id="T">T</li>
-                <li class="letter" id="U">U</li>
-                <li class="letter" id="V">V</li>
-                <li class="letter" id="W">W</li>
-                <li class="letter" id="X">X</li>
-                <li class="letter" id="Y">Y</li>
-                <li class="letter" id="Z">Z</li>
-            </ul>
+        <div class="left">
+            <h2>press on the letters below to guess the word</h2>
+            <div class="ul">
+                <ul class="letters">
+                    <li class="letter" id="A">A</li>
+                    <li class="letter" id="B">B</li>
+                    <li class="letter" id="C">C</li>
+                    <li class="letter" id="C">D</li>
+                    <li class="letter" id="E">E</li>
+                    <li class="letter" id="F">F</li>
+                    <li class="letter" id="G">G</li>
+                    <li class="letter" id="H">H</li>
+                    <li class="letter" id="I">I</li>
+                    <li class="letter" id="J">J</li>
+                    <li class="letter" id="K">K</li>
+                    <li class="letter" id="L">L</li>
+                    <li class="letter" id="M">M</li>
+                </ul>
+                <ul class="letters">
+                    <li class="letter" id="N">N</li>
+                    <li class="letter" id="O">O</li>
+                    <li class="letter" id="P">P</li>
+                    <li class="letter" id="Q">Q</li>
+                    <li class="letter" id="R">R</li>
+                    <li class="letter" id="S">S</li>
+                    <li class="letter" id="T">T</li>
+                    <li class="letter" id="U">U</li>
+                    <li class="letter" id="V">V</li>
+                    <li class="letter" id="W">W</li>
+                    <li class="letter" id="X">X</li>
+                    <li class="letter" id="Y">Y</li>
+                    <li class="letter" id="Z">Z</li>
+                </ul>
+            </div>
+            <div id="secret-word"><h2>The Secret Word Is:</h2></div>
+            <div id="word"></div>
+            <div id="hint">Hint Goes Here</div>
+            <div id="lives">You have 7 lives left</div>
+            <div id="your-status"></div>
         </div>
-        <div id="secret-word"><h2>The Secret Word Is:</h2></div>
-        <div id="word"></div>
-        <div id="hint"><h2>Hint Goes Here</h2></div>
-        <div id="lives"><h2>You have <span id="lives"></span> lives</h2></div>
+        <div class="right">
+            <img id="img" src="images/hangman-0.png" alt="">
+        </div><br>
+
     </div>
 
 </body>
