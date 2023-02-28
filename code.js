@@ -30,7 +30,7 @@ window.onload=function(){
     // console.log(dashed_word.innerHTML)
     let wrong_attempts = 0;
 
-    
+    let won=false
     let status= false
 document.addEventListener("click",(e) => {
     status= false
@@ -49,19 +49,19 @@ document.addEventListener("click",(e) => {
             }
         })
     }
-
+    
     if(!status  && e.target.classList.contains("clicked")){
-
-        if(wrong_attempts<7){
+        
+        if(wrong_attempts<7 && !won){
             wrong_attempts++;
             img_src=`images/hangman-${wrong_attempts}.png`
             document.getElementById("img").src=img_src
             remainig_lives.innerHTML=`You have ${7-wrong_attempts} lives left`;
         }
         console.log(wrong_attempts, under_scores_array)
-        if (wrong_attempts==7){
+        if (wrong_attempts==7 && !won){
             your_status.innerHTML="You Lose!!"
-            status=true
+            status=true;
             remainig_lives.style.visibility='hidden';
             hint.innerHTML='Your Friend Is Dead';
             secret_word.style.visibility='hidden';
@@ -71,8 +71,8 @@ document.addEventListener("click",(e) => {
     if (under_scores_array.indexOf("_") == -1 && wrong_attempts<7){
         console.log("you win!!");
         your_status.innerHTML="You Win!!"
-
-        status=true
+        won=true;
+        status=true;
 
     }
 
