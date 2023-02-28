@@ -30,9 +30,10 @@ li{
 h3{
     text-align: center;
 }
-li.inactive{
+.letters .letter.clicked{
     background-color: rgb(187, 187, 187);
     color: dimgrey;
+    pointer-events: none;
 }
 .container{
     display: flex;

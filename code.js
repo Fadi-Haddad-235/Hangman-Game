@@ -1,7 +1,9 @@
 window.onload=function(){
-    secret_words=["hello","world"];
-    var elements=document.getElementsByTagName("li");
-    console.log(elements[1]);
-    newnew=elements[1];
-    newnew.addEventListener("click",console.log(this));
+document.addEventListener("click",(e) => {
+    if (e.target.className==="letter"){
+        e.target.classList.add("clicked")
+    }
+    let clickedLetter = e.target.innerHTML.toLowerCase()
+    console.log(clickedLetter)
+})
 }
