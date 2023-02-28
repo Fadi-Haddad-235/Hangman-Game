@@ -22,6 +22,7 @@ window.onload=function(){
     remainig_lives=document.getElementById("lives")
     hint=document.getElementById("hint");
     hint.innerHTML=random_cat_name;
+    secret_word=document.getElementById("secret-word");
 
 
 
@@ -62,7 +63,9 @@ document.addEventListener("click",(e) => {
             your_status.innerHTML="You Lose!!"
             status=true
             remainig_lives.style.visibility='hidden';
-            hint.style.visibility='hidden';
+            hint.innerHTML='Your Friend Is Dead';
+            secret_word.style.visibility='hidden';
+            dashed_word.style.visibility="hidden"
         }
     }
     if (under_scores_array.indexOf("_") == -1 && wrong_attempts<7){
