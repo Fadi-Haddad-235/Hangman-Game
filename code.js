@@ -19,9 +19,12 @@ window.onload=function(){
     const dashed_word = document.getElementById("word");
     dashed_word.innerHTML = under_scores
     // console.log(dashed_word.innerHTML)
+    let wrong_attempts = 0;
 
-
+    
+    let status= false
 document.addEventListener("click",(e) => {
+    status= false
     if (e.target.className==="letter"){
         e.target.classList.add("clicked")
     }
@@ -29,12 +32,19 @@ document.addEventListener("click",(e) => {
     random_word_letters.forEach((word_letter, index)=>{
         if(clickedLetter == word_letter){
             // console.log(clickedLetter,random_word)
-
+            status= true;
             under_scores_array[index]=clickedLetter;
             dashed_word.innerHTML = under_scores_array.join('');
 
-
         }
     })
+    if(!status){
+        wrong_attempts++;
+        console.log(wrong_attempts)
+        if (under_scores_array.indexOf("_") == -1){
+            console.log("you win!!")
+
+        }
+    }
 })
 }

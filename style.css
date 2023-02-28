@@ -26,13 +26,14 @@ li{
     text-align: center;
     text-justify: auto;
     border-radius: 8px;
+    cursor: pointer;
 }
 h3{
     text-align: center;
 }
 .letters .letter.clicked{
     background-color: rgb(187, 187, 187);
-    color: dimgrey;
+    color: rgb(66, 2, 2);
     pointer-events: none;
 }
 .container{
