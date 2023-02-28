@@ -1,9 +1,8 @@
 window.onload=function(){
     const words={
-        languages : ["python", "javascript" , "HTML" , "CSS" , "pascal", "julia"],
-        frameworks : ["react" , "vue" , "angualr" , "Django" , "flask" , "laravel"],
-        datastructure : ["stack" , "queue" , "linkdlist" , "heap" , "hashtable"],
-        sort_algo : ["bubble" , "quick" , "merge" , "selection", "insertion"]
+        'a programming language' : ["python", "javascript" , "HTML" , "CSS" , "pascal", "julia"],
+        "a web framework" : ["react" , "vue" , "angualr" , "Django" , "flask" , "laravel"],
+        'a datastructure' : ["stack" , "queue" , "linkdlist" , "heap" , "hashtable"]
     };
     
     let keys = Object.keys(words);
@@ -21,6 +20,8 @@ window.onload=function(){
     document.getElementById("img").src="images/hangman-0.png"
     your_status=document.getElementById("your-status");
     remainig_lives=document.getElementById("lives")
+    hint=document.getElementById("hint");
+    hint.innerHTML=random_cat_name;
 
 
 
@@ -54,19 +55,23 @@ document.addEventListener("click",(e) => {
             wrong_attempts++;
             img_src=`images/hangman-${wrong_attempts}.png`
             document.getElementById("img").src=img_src
+            remainig_lives.innerHTML=`You have ${7-wrong_attempts} lives left`;
         }
         console.log(wrong_attempts, under_scores_array)
         if (wrong_attempts==7){
             your_status.innerHTML="You Lose!!"
             status=true
+            remainig_lives.style.visibility='hidden';
+            hint.style.visibility='hidden';
         }
     }
     if (under_scores_array.indexOf("_") == -1 && wrong_attempts<7){
         console.log("you win!!");
         your_status.innerHTML="You Win!!"
+
         status=true
 
     }
-    remainig_lives.innerHTML=`You have ${7-wrong_attempts} lives left`;
+
 })
 }

@@ -59,7 +59,12 @@ h3{
     color: red;
 }
 #lives, #hint{
+    
     font-size: 30px;
     font-weight:bold;
     padding-bottom: 20px;
+}
+#hint{
+    font-size: 30px;
+    color: rgb(133, 255, 34);
 }
