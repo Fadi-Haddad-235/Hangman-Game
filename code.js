@@ -15,9 +15,10 @@ window.onload=function(){
     let random_word = random_cat_value[random_value_number];
     let random_word_letters = Array.from(random_word.toLowerCase())
     let under_scores = "_".repeat(random_word_letters.length)
-    const dotted_word = document.getElementById("word");
-    dotted_word.innerHTML = under_scores
-    console.log(dotted_word.innerHTML)
+    let under_scores_array = Array.from(under_scores)
+    const dashed_word = document.getElementById("word");
+    dashed_word.innerHTML = under_scores
+    // console.log(dashed_word.innerHTML)
 
 
 document.addEventListener("click",(e) => {
@@ -27,7 +28,11 @@ document.addEventListener("click",(e) => {
     let clickedLetter = e.target.innerHTML.toLowerCase()
     random_word_letters.forEach((word_letter, index)=>{
         if(clickedLetter == word_letter){
-            console.log(under_scores);
+            // console.log(clickedLetter,random_word)
+
+            under_scores_array[index]=clickedLetter;
+            dashed_word.innerHTML = under_scores_array.join('');
+
 
         }
     })
