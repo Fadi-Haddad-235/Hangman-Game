@@ -38,7 +38,7 @@ document.addEventListener("click",(e) => {
 
         }
     })
-    if(!status){
+    if(!status  && e.target.classList.contains("clicked")){
         wrong_attempts++;
         console.log(wrong_attempts)
         if (under_scores_array.indexOf("_") == -1){
