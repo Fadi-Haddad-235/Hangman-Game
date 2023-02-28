@@ -32,13 +32,13 @@ window.onload=function(){
     let status= false
 document.addEventListener("click",(e) => {
     status= false
-    if(wrong_attempts<8){
+    if(wrong_attempts<7){
         if (e.target.className==="letter"){
             e.target.classList.add("clicked")
         }
         let clickedLetter = e.target.innerHTML.toLowerCase()
         random_word_letters.forEach((word_letter, index)=>{
-            if(clickedLetter == word_letter){
+            if(clickedLetter == word_letter && wrong_attempts<7){
                 // console.log(clickedLetter,random_word)
                 status= true;
                 under_scores_array[index]=clickedLetter;
@@ -49,19 +49,22 @@ document.addEventListener("click",(e) => {
     }
 
     if(!status  && e.target.classList.contains("clicked")){
-        wrong_attempts++;
-        if(wrong_attempts<8){
+
+        if(wrong_attempts<7){
+            wrong_attempts++;
             img_src=`images/hangman-${wrong_attempts}.png`
             document.getElementById("img").src=img_src
         }
         console.log(wrong_attempts, under_scores_array)
         if (wrong_attempts==7){
-            your_status.innerHTML="you lose!!"
+            your_status.innerHTML="You Lose!!"
+            status=true
         }
     }
-    if (under_scores_array.indexOf("_") == -1){
+    if (under_scores_array.indexOf("_") == -1 && wrong_attempts<7){
         console.log("you win!!");
-        your_status.innerHTML="you win!!"
+        your_status.innerHTML="You Win!!"
+        status=true
 
     }
     remainig_lives.innerHTML=`You have ${7-wrong_attempts} lives left`;
