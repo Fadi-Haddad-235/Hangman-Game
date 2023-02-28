@@ -1,4 +1,5 @@
 body{
+    font-family: roboto;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -51,14 +52,14 @@ h3{
     font-size: 60px;
     letter-spacing: 3px;
     font-weight: 500;
-    padding-bottom: 30px;
+    padding-bottom: 25px;
 }
 #your-status{
-    font-size: 60px;
+    font-size: 55px;
     color: red;
 }
 #lives, #hint{
     font-size: 30px;
     font-weight:bold;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
 }
